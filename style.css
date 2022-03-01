@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root{
+    --Moderateviolet: hsl(263, 55%, 52%);
+    --Verydarkgrayishblue: hsl(217, 19%, 35%);
+    --Verydarkblackishblue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+
+
+    --Lightgray: hsl(0, 0%, 81%);
+    --Lightgrayishblue: hsl(210, 46%, 95%);
+
+
+    --fw-medium: 500;
+    --fw-semibold: 600;
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    padding: 70px 24px;
+    background-color: var(--Lightgrayishblue);
+    font-weight: var(--fw-medium); -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+     -ms-animation: fadein 2s; /* Internet Explorer */
+      -o-animation: fadein 2s; /* Opera < 12.1 */
+         animation: fadein 2s;
+}
+
+@keyframes fadein {
+ from { opacity: 0; }
+ to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+ from { opacity: 0; }
+ to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+ from { opacity: 0; }
+ to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+ from { opacity: 0; }
+ to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+ from { opacity: 0; }
+ to   { opacity: 1; }
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+}
+
+.grid-item{
+    border-radius: 8px;
+    padding: 24px 30px 33px 30px;
+}
+
+.header-container{
+    display: flex;
+    align-items: center;
+}
+.header-container-small{
+    margin-left: 15px;
+}
+.grad-label{
+    font-size: 12px;
+    opacity: 50%;
+}
+.hero-image{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.bold-text{
+    font-size: 18px;
+    font-weight: var(--fw-semibold);
+    margin: 20px 0;
+}
+
+.description-para{
+    opacity: 70%;
+}
+
+.quotes-image{
+    position: absolute;
+    right: 24px;
+    top: 0;
+    z-index: -4;
+}
+#testimonial-1{
+    position: relative;
+    background-color: var(--Moderateviolet);
+    color: var(--Lightgrayishblue);
+    z-index: 0;
+}
+#testimonial-1 .hero-image{
+    border: 2px solid #83a5da;
+
+}
+#testimonial-2{
+    background-color: var(--Verydarkgrayishblue);
+    color: var(--Lightgrayishblue);
+
+}
+#testimonial-3{
+    background-color: var(--White);
+    color: var(--Verydarkgrayishblue);
+
+
+}
+#testimonial-4{
+    background-color: var(--Verydarkblackishblue);
+    color: var(--Lightgrayishblue);
+
+}
+#testimonial-4 .hero-image{
+    border: 2px solid var(--Moderateviolet);
+}
+
+#testimonial-5{
+    background-color: var(--White);
+    color: var(--Verydarkgrayishblue);
+}
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    margin-top: 15px;
+ }
+.attribution a {
+     color: hsl(228, 45%, 44%); 
+    }
+
+
+
+
+
+@media (min-width: 768px){
+    main{
+    grid-template-areas: "daniel jonathan""daniel patrick""jeanette patrick""kira kira";
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+
+    }
+    #testimonial-1{
+        grid-area: daniel;
+    }
+    #testimonial-2{
+        grid-area: jonathan;
+    }
+    #testimonial-3{
+        grid-area: jeanette;
+    }
+    #testimonial-4{
+        grid-area: patrick;
+    }
+    #testimonial-5{
+        grid-area:kira ;
+    }
+}
+
+@media (min-width:1200px){
+    body{
+        padding: 166px;
+    }
+    main{
+        grid-template-areas: "daniel daniel jonathan kira"
+        "jeanette patrick patrick kira";
+        grid-template-columns: repeat(4,1fr);
+    }
+    .quotes-image{
+        right: 75px;
+    }
+    #testimonial-1{
+        grid-area: daniel;
+    }
+    #testimonial-2{
+        grid-area: jonathan;
+    }
+    #testimonial-3{
+        grid-area: jeanette;
+    }
+    #testimonial-4{
+        grid-area: patrick;
+    }
+    #testimonial-5{
+        grid-area:kira ;
+    }
+}
